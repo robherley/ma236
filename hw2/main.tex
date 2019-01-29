@@ -1,0 +1,55 @@
+\documentclass[11pt]{article}
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{xcolor}
+
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+
+\begin{document}
+\title{MA-236: Homework 2}
+\author{Rob Herley}
+\maketitle
+
+\begin{center}
+I pledge my honor that I have abided by the Stevens Honor System.
+\end{center}
+
+\section*{1.18 Problems}
+\subsection*{(3) Show that the following argument is valid:}
+$$A \lor B, A \rightarrow C, B \rightarrow C, \text{so} \ C$$
+
+\noindent
+To compute this efficiently, we find try to find a counter example such that all
+the premises are true and the conclusion is false. We can cut the table down to
+premises we know that can possibly produce counter examples:
+\begin{center}
+\begin{tabular}{ccc|ccc|c}
+$A$ & $B$ & $C$ & $A \lor B$ & $A \rightarrow C$ & $B \rightarrow C$ & $C$ \\ \hline
+t & t & f &   \red{t}  & f       &  f  & \red{f} \\
+t & f & f &   \red{t}  & f       &  t  & \red{f} \\
+f & t & f &   \red{t}  & \red{t} &  f  & \red{f} \\
+f & f & f &   f        &   t     &  t  & \red{f}
+\end{tabular}
+\end{center}
+
+\noindent
+Full computation:
+\begin{center}
+\begin{tabular}{ccc|ccc|c}
+$A$ & $B$ & $C$ & $A \lor B$ & $A \rightarrow C$ & $B \rightarrow C$ & $C$ \\ \hline
+t & t & t & t & t & t & t \\
+t & t & f & t & f & f & f \\
+t & f & t & t & t & t & t \\
+t & f & f & t & f & t & f \\
+f & t & t & t & t & t & t \\
+f & t & f & t & t & f & f \\
+f & f & t & f & t & t & t \\
+f & f & f & f & t & t & f
+\end{tabular}
+\end{center}
+
+\noindent
+Since we cannot find a counter example, the argument is valid.
+
+\end{document}
+
