@@ -1,0 +1,44 @@
+\documentclass[12pt]{article}
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{xcolor}
+
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+
+\begin{document}
+\title{MA-236: Homework 3}
+\author{Rob Herley}
+\maketitle
+
+\begin{center}
+I pledge my honor that I have abided by the Stevens Honor System.
+\end{center}
+
+\section*{1.18 Problems}
+\subsection*{(6.d) "It's false that if Min is home, she's on board, because if she's home, she's not on board."}
+
+\begin{center}
+\underline{Atomic Sentences:} \\
+A: Min is home \\
+B: Min is on board \\
+\end{center}
+
+$$ \frac{A\rightarrow \neg B}{\neg (A \rightarrow B)}$$
+
+\begin{center}
+\begin{tabular}{cc|cc}
+$A$ & $B$ & $A\rightarrow \neg B$ & $\neg (A \rightarrow B)$  \\ \hline
+t & t & f       &   f   \\
+t & f & t       &   t   \\
+f & t & \red{t} &   \red{f}   \\
+f & f & \red{t} &   \red{f}       
+\end{tabular}
+\end{center}
+
+\noindent
+This argument is \textbf{not valid} because there are two counter examples where the
+premise is true and the conclusion is false.
+
+
+\end{document}
+
