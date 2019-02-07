@@ -1,0 +1,71 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath}
+\usepackage{enumitem}
+\usepackage{xcolor}
+
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+
+\begin{document}
+\title{MA-236: Homework 4}
+\author{Rob Herley}
+\maketitle
+
+\begin{center}
+I pledge my honor that I have abided by the Stevens Honor System.
+\end{center}
+
+\begin{quotation}
+  "If you play and you study you’ll pass the exams, while if you play and don’t study you won’t pass. Thus, if you play, either you study and you’ll pass the exams, or you don’t study and you won’t pass."
+\end{quotation}
+
+
+\begin{enumerate}
+  \item Write out the premises and conclusion of the above argument in English. \\
+  \textbf{Premises:} 
+    \begin{itemize}
+      \item If you play and study you'll pass the exams.
+      \item If you play and don't study you won't pass.
+    \end{itemize}
+  \textbf{Conclusion:} 
+    \begin{itemize}
+      \item If you play either you study and you'll pass the exams, or you don't
+      study and you won't pass.
+    \end{itemize}
+  \item Identify and name the atomic sentences.
+  \begin{enumerate}[label=\textbf{\Alph*:}]
+    \item You play.
+    \item You study.
+    \item You pass the exams.
+  \end{enumerate}
+  \item Write down the symbolic form of the argument.
+  \begin{center}
+    \begin{tabular}{ll}
+    Premise 1: & $(A \land B) \rightarrow C$ \\
+    Premise 2: & $(A \land \neg B) \rightarrow \neg C$ \\ \hline
+    Conclusion: & $A \rightarrow ((B \land C) \lor (\neg B \land \neg C))$ \\
+    \end{tabular}
+  \end{center}
+  \newpage
+  \item Check if the argument is valid.
+  \begin{center}
+    \begin{tabular}{ccc|ccc}
+      A & B & C & $(A \land B) \rightarrow C$ & $(A \land \neg B) \rightarrow \neg C$ & $A \rightarrow ((B \land C) \lor (\neg B \land \neg C))$ \\ \hline
+      t & t & t &  t  &  t  &  t  \\
+      t & t & f &  f  &  t  &  f  \\
+      t & f & t &  t  &  f  &  f  \\
+      t & f & f &  t  &  t  &  t  \\
+      f & t & t &  t  &  t  &  t  \\
+      f & t & f &  t  &  t  &  t  \\
+      f & f & t &  t  &  t  &  t  \\
+      f & f & f &  t  &  t  &  t
+    \end{tabular}
+  \end{center}
+\end{enumerate}
+
+\noindent
+Since there are no counter examples where the premises are all true and the 
+conclusion is false, this is a valid argument.
+
+\end{document}
+
