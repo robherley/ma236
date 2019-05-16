@@ -1,0 +1,57 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{mathtools}
+\usepackage{amssymb, amsthm}
+\usepackage{tikz}
+\usepackage{tkz-graph}
+\usepackage{multicol}
+\usetikzlibrary{arrows,automata}
+\usepackage[nointegrals]{wasysym}
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+
+\begin{document}
+\title{MA-236: Homework 11}
+\author{Rob Herley}
+\maketitle
+
+\begin{center}
+I pledge my honor that I have abided by the Stevens Honor System.
+\end{center}
+
+\begin{center}
+  "Prove that $ss0$ is not equal to $sss0$ in Robinson arithmetic."
+\end{center}
+
+\noindent
+Pruned Tree where $Q_1...Q_7$ are the axioms of Robinson's arithmetic:
+
+\begin{center}
+  \begin{tikzpicture}
+  \draw (0,0)      node (11)                       {1.};
+  \draw (2cm,0)    node (13) [label=right:$\neg$Conclusion] {$ss0 = sss0$};
+  
+  \draw (0,-1cm)   node (21)                      {2.};
+  \draw (2cm,-1cm) node (23) [label=right:$Q_2$] {$0 \neq s0$};
+  \draw (13) -- (23);
+  
+  \draw (0,-2cm)   node (31)                      {3.};
+  \draw (2cm,-2cm) node (33) [label=right:{$Q_1$,$2$}]{$s0 \neq ss0$};
+  \draw (23) -- (33);
+  
+  \draw (0,-3cm)   node (41)                      {4.};
+  \draw (2cm,-3cm) node (43) [label=right:{$Q_1$,$3$}][label=below:$\times$]{$ss0 \neq sss0$};
+  \draw (33) -- (43);
+
+  
+  \end{tikzpicture}
+  \end{center}
+
+\noindent
+Since the pruned refutation tree closes, the sentences are \textbf{inconsistent}.
+Therefore, the argument is \textbf{valid}.
+
+\end{document}
+
